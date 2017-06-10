@@ -1,6 +1,7 @@
 ---
 title: "Tutorial 2: Using Correlation Measures to Assess Replicability of Drug Response Studies"
 output: html_document
+author: Keegan Korthauer
 ---
 
 ```{r setup, include=FALSE}
@@ -43,7 +44,9 @@ Are drugs with higher AUC more or less toxic?
 First, we'll read in the .csv file that contains the summarized pharmacological data (including the IC50 and AUC values for each drug and cell line combination, as described above). 
 
 ```{r read csv}
-cellLinesSummary <- read.csv("summarizedPharmacoData.csv", header=TRUE)
+library(PharmPlotter)
+data("summarizedData")
+cellLinesSummary <- summarizedData
 str(cellLinesSummary)
 
 length(unique(cellLinesSummary$cellLine))

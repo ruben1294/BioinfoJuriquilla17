@@ -28,13 +28,13 @@ define a function that allows us to visualize the relation between
 drug response and drug concentration.
 
 ```{r plotResponse}
-rawFile <- "rawPharmacoData.csv"
-summarizedFile <- "summarizedPharmacoData.csv"
-if( !file.exists( rawFile ) ){
-    source("downloadData.R")
-}
-pharmacoData <- read.csv(rawFile)
-summarizedData <- read.csv(summarizedFile)
+library(PharmPlotter)
+
+data("rawData")
+data("summarizedData")
+
+pharmacoData <- rawData
+summarizedData <- summarizedData
 
 library(ggplot2)
 library(dplyr)

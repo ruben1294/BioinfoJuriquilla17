@@ -1,6 +1,7 @@
 ---
 title: "Tutorial 3: Identifying biological factors that influence replicability of pharmacogenomic studies"
 output: html_document
+author: Keegan Korthauer
 ---
 
 ```{r setup, include=FALSE}
@@ -28,7 +29,9 @@ The main finding of Haibe-Kains et al. (2013) (the reanalysis paper) was that th
 First, we'll read in the .csv file that contains the summarized pharmacological data (including the IC50 and AUC values for each drug and cell line combination, as described above). 
 
 ```{r read csv}
-cellLinesSummary <- read.csv("summarizedPharmacoData.csv", header=TRUE)
+library(PharmPlotter)
+data("summarizedData")
+cellLinesSummary <- summarizedData
 str(cellLinesSummary)
 ```
 

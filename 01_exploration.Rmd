@@ -20,11 +20,15 @@ If you have any question about the code, ask one of the mentors.
 Also remember that [google](www.google.com) is one of the most important tool for 
 data science. 
 
-Let's start by loading the data into the current working session. 
+Let's start by installing the package that contains the data. 
 
 ```{r readRaw}
-rawFile <- "rawPharmacoData.csv"
-pharmacoData <- read.csv(rawFile)
+if( !require( PharmPlotter ) ){
+  devtools:::install_github("areyesq89/PharmPlotter")
+}
+library(PharmPlotter)
+data("rawData", package="PharmPlotter")
+pharmacoData <- rawData
 ```
 
 What kind of variables are in the data? Are these variables numerical and/or categorical? What does each column represent?
@@ -50,8 +54,8 @@ tapply( pharmacoData$doseID, pharmacoData$study, function(x){
 
 One of the first things data scientists do when
 digging into new data is to explore their distributions. 
-Histograms visualize the data distributions and can also point us towards statistical 
-models to use. The code below 
+Histograms visualize the data distributions and can also point us towards appropiate statistical 
+models. The code below 
 transforms the data into a logarithmic scale and plots a histogram separately for each study. Based on these plots, which study would you say 
 has the most consistent experimental protocol?
 
