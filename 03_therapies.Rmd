@@ -26,7 +26,7 @@ The CCLE and GDSC studies both investigated genomic profiles for all the cell li
 The main finding of Haibe-Kains et al. (2013) (the reanalysis paper) was that the genomic profiles of the cell lines used in both studies were highly correlated. What you might have found so far in your explorations of comparing the summary measures of drug response is that the agreement between the studies does not seem as highly correlated. Part of this may be explained by differences in protocol (which you can see in the different drug concentrations tested in the two studies). In the rest of this tutorial, we'll investigate further sources of variation and biological mechanisms that might explain some of this lack of agreement.
 
 ## Load the summarized pharmacological dataset into the session
-First, we'll read in the .csv file that contains the summarized pharmacological data (including the IC50 and AUC values for each drug and cell line combination, as described above). 
+First, we'll load the summarized data object (including the IC50 and AUC values for each drug and cell line combination, as described above). 
 
 ```{r read csv}
 library(PharmPlotter)
@@ -61,7 +61,6 @@ ggplot(resistant, aes( y=AUC_study2, x=AUC_study1) ) +
 
 Here we have simulated the AUC values in each study to be closer to zero but with some random variability (this is done here using the Beta distribution). Do these AUC values look correlated? Calculate a correlation coefficient to quantify the correlation.
 
-> Place your answer here
 
 Now, consider the situation where only half of the cell lines are resistant (with AUC values close to zero) and half are sensitive (with high AUC values). 
 

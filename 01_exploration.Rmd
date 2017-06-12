@@ -1,6 +1,7 @@
 ---
 title: "Tutorial 1: Exploratory analysis of pharmacogenomic data"
 output: html_document
+author: Alejandro Reyes
 ---
 
 ```{r echo=FALSE}
@@ -9,18 +10,19 @@ knitr::opts_chunk$set(cache=FALSE)
 
 ## Introduction
 
-Probably the most important step of analyzing datasets is to actually understand 
-the data. This process is crucial to know what kind of questions we can 
-answer with it. This tutorial has code that will help guiding 
-you through this process. Make sure you understand well the experimental design of the
-two studies and try to link each variable to this experimental design. Also, make sure you 
-understand what each *R* command is doing. Feel free to hack the code!
+Probably the most important step of analyzing datasets is to actually
+understand the data. This process is crucial to know what kind of
+questions we can answer with it. This tutorial has code that will help
+guiding you through this process. Make sure you understand well the
+experimental design of the two studies and try to link each variable
+to this experimental design. Also, make sure you understand what each
+*R* command is doing. Feel free to hack the code!
 
-If you have any question about the code, ask one of the mentors.
-Also remember that [google](www.google.com) is one of the most important tool for 
-data science. 
+If you have any question about the code, ask! Also remember that
+[google](www.google.com) is one of the most important tool for data
+science.
 
-Let's start by installing the package that contains the data. 
+Let's start by installing the package that contains the data.
 
 ```{r readRaw}
 if( !require( PharmPlotter ) ){
@@ -52,12 +54,13 @@ tapply( pharmacoData$doseID, pharmacoData$study, function(x){
     })
 ```
 
-One of the first things data scientists do when
-digging into new data is to explore their distributions. 
-Histograms visualize the data distributions and can also point us towards appropiate statistical 
-models. The code below 
-transforms the data into a logarithmic scale and plots a histogram separately for each study. Based on these plots, which study would you say 
-has the most consistent experimental protocol?
+One of the first things data scientists do when digging into new data
+is to explore their distributions.  Histograms visualize the data
+distributions and can also point us towards appropiate statistical
+models. The code belowtransforms the data into a logarithmic scale and
+plots a histogram separately for each study. Based on these plots,
+which study would you say has the most consistent experimental
+protocol?
 
 ```{r quest6, warning=FALSE}
 library(ggplot2)
@@ -66,7 +69,6 @@ ggplot( pharmacoData, aes( log2(concentration) ) ) +
     geom_histogram(fill = "white", colour="black") +
     facet_wrap(~study)
 ```
-
 
 Viability scores are the percentage
 of cells that survive upon exposure to a certain drug.
@@ -88,8 +90,10 @@ ggplot( pharmacoData, aes( viability, group=study, colour=study) ) +
     geom_density(fill="white", lwd=2, alpha=0.1) + xlim(0, 170)
 ```
 
-The code below plots the viability scores as box-plots for each drug, stratified by the two studies. Can you tell something about the toxic properties of the different 
-drugs? Are these properties consistent across studies?
+The code below plots the viability scores as box-plots for each drug,
+stratified by the two studies. Can you tell something about the toxic
+properties of the different drugs? Are these properties consistent
+across studies?
 
 ```{r}
 ggplot( pharmacoData, aes( y=viability, x=drug, fill=study) ) +
