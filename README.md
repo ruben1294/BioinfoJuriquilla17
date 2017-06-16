@@ -17,13 +17,13 @@ The package PhamPlotter contain the following two data frames:
 ## Tutorials:
 Each tutorial contains text and code that explores various aspects of data science, replicability, and reproducibility. Tutorials 1-4 contain questions to fill in, some require written answers and some require code to produce a plot or numerical summary.
 
-* [`01_exploration.Rmd`](https://github.com/areyesq89/BioinfoJuriquilla17/blob/master/exploration.Rmd) : R markdown tutorial 1 - "What to do when you first get data"
+* [`01_exploration.Rmd`](https://github.com/areyesq89/BioinfoJuriquilla17/blob/master/01_exploration.Rmd) : R markdown tutorial 1 - "What to do when you first get data"
 
-* [`02_correlation.Rmd`](https://github.com/areyesq89/BioinfoJuriquilla17/blob/master/pharmaco_correlation.Rmd) : R markdown tutorial 2 - "Evaluating replicability of large pharmacological studies"
+* [`02_correlation.Rmd`](https://github.com/areyesq89/BioinfoJuriquilla17/blob/master/02_correlation.Rmd) : R markdown tutorial 2 - "Evaluating replicability of large pharmacological studies"
 
-* [`03_therapies.Rmd`](https://github.com/areyesq89/BioinfoJuriquilla17/blob/master/targeted_therapies.Rmd) : R markdown tutorial 3 - "Identifying biological factors that influence replicability"
+* [`03_therapies.Rmd`](https://github.com/areyesq89/BioinfoJuriquilla17/blob/master/03_therapies.Rmd) : R markdown tutorial 3 - "Identifying biological factors that influence replicability"
 
-* [`04_regression.Rmd`](https://github.com/areyesq89/BioinfoJuriquilla17/blob/master/regression.Rmd) : R markdown tutorial 4 - "Regression approaches for summarizing drug response data"
+* [`04_regression.Rmd`](https://github.com/areyesq89/BioinfoJuriquilla17/blob/master/04_regression.Rmd) : R markdown tutorial 4 - "Regression approaches for summarizing drug response data"
 
 ## Useful Links:
 

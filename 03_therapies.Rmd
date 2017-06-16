@@ -1,7 +1,10 @@
 ---
-title: "Tutorial 3: Identifying biological factors that influence replicability of pharmacogenomic studies"
-output: html_document
-author: Keegan Korthauer
+title: 'Tutorial 3: Identifying biological factors that influence replicability of
+  pharmacogenomic studies'
+author: "Keegan Korthauer"
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}

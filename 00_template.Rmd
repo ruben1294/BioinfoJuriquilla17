@@ -1,8 +1,10 @@
 ---
 title: "Insert your team name here"
-output: html_document
-date: Replicathon 2017
-author: Team members names
+author: "Team members names"
+date: "Replicathon 2017"
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}

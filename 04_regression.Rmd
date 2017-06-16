@@ -1,7 +1,10 @@
 ---
-title: "Tutorial 4: Modeling the Relation between Two Variables (Drug Concentration vs Viability)"
-output: html_document
-author: Alejandro Reyes
+title: 'Tutorial 4: Modeling the Relation between Two Variables (Drug Concentration
+  vs Viability)'
+author: "Alejandro Reyes"
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r echo=FALSE}
