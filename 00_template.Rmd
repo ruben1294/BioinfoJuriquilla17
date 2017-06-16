@@ -20,7 +20,11 @@ The questions below will help guide you in your analyses and interpretation of r
 For each answer, include text by simply typing below the question. Include code in code blocks (include three back ticks at the start and end of each code block):
 
 ```{r}
-#Your code goes here
+library(PharmPlotter)
+library(ggplot)
+library(cowplot)
+data("rawData")
+data("summarizedData")
 ```
 
 You may find it helpful to use the version control and code sharing system called GitHub to work together with your team so that all of you can edit the same document and keep track of its changes. Here is a [setup guide](https://github.com/datasciencelabs/2016/blob/master/lectures/git-and-github/setting-up-git.Rmd) and [brief introduction to Git and GitHub](https://github.com/datasciencelabs/2016/blob/master/lectures/git-and-github/version-control.Rmd) from another course. The mentors will be able to help if you run into problems. 
@@ -30,14 +34,32 @@ You may find it helpful to use the version control and code sharing system calle
 ### Exploratory analysis of pharmacogenomic data
 
 1. How many cell-lines are contained in the data?
+```{r ask1}
+head(rawData)
+length( unique( rawData$cellLine))
+```
 
 2. What drug concentrations were used in each study?
+```{r ask2}
+#head(rawData)
+#unique( rawData$concentration)
+tapply( pharmacoData$concentration, pharmacoData$study, function(x){
+        unique( x )
+    })
+```
 
 3. Histograms, appart from telling how is the data
 distributed, can also make evident potential
 problems with the data. Plot a histogram
 of drug viabilities. Does it look as one would
 expect from the description of the data?
+
+```{r ask3}
+
+hist()
+ggplot( pharmacoData, aes( viability, group=study, colour=study) ) +
+    geom_density(fill="white", lwd=2, alpha=0.1) + xlim(0, 170)
+```
 
 4. How many viability data points are within the
 expected range according to the definition of viability (e.g. above 0 

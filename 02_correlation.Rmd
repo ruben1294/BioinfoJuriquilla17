@@ -3,8 +3,8 @@ title: 'Tutorial 2: Using Correlation Measures to Assess Replicability of Drug R
   Studies'
 author: "Keegan Korthauer"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -31,7 +31,7 @@ the agreement of these summary measures in the two studies.
 Recall that in the summarized dataset, for each cell line and drug
 combination, the cell line viability over all drug concentrations has
 been summarized into a single number, which represents the *overall
-effect of the drug on the cell line*. Essentially, There are many
+effect of the drug on the cell line*. Essentially, there are many
 different ways this could be done, and our data provides two possible
 measures:
 
@@ -41,6 +41,8 @@ measures:
 
 Are cell lines with higher IC50 values more or less susceptible? What
 about drugs with higher IC50 values - are they more or less toxic?
+
+Answer: cell lines with higher IC50 values are less susceptible to the drug, because it is needed a high concentration of the drug to reach the inhibition of 50% of the cells. Drugs with low IC50 are more toxic, because they can inhibit 50% of the cells with a low concentration.
 
 
 2. AUC (Area Under the Curve): despite the name, this is actually the
@@ -55,8 +57,8 @@ Are cell lines with higher values of AUC more or less resistant?
 
 Are drugs with higher AUC more or less toxic?
 
-## Load the summarized pharmacological dataset into the session First,
-we'll read in the .csv file that contains the summarized
+## Load the summarized pharmacological dataset into the session
+First, we'll read in the .csv file that contains the summarized
 pharmacological data (including the IC50 and AUC values for each drug
 and cell line combination, as described above).
 
@@ -75,6 +77,8 @@ line-drug combination.  Making up these combinations are 288 unique
 cell lines, and 15 drugs.
 
 Was every cell line in the dataset tested with every drug?
+
+Definitively no. Combination of 288 with 15 gives a number in the order of 10^24, so I can say that is a number higher than 2257, so I can say that not every cell line was tested with every drug.
 
 ## Comparing response of drug AZD0530 in the two studies
 

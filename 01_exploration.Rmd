@@ -2,8 +2,8 @@
 title: 'Tutorial 1: Exploratory analysis of pharmacogenomic data'
 author: "Alejandro Reyes"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 
 ```{r echo=FALSE}
@@ -26,7 +26,13 @@ science.
 
 Let's start by installing the package that contains the data.
 
+
+
 ```{r readRaw}
+
+# source("https://bioconductor.org/biocLite.R")
+# biocLite("devtools")
+
 if( !require( PharmPlotter ) ){
   devtools:::install_github("areyesq89/PharmPlotter")
 }
