@@ -1,6 +1,6 @@
 ---
 title: "Insert your team name here"
-author: "Team members names"
+author: "Rubén Alfonso Castaneda Martínez"
 date: "Replicathon 2017"
 output:
   pdf_document: default
@@ -48,17 +48,20 @@ tapply( pharmacoData$concentration, pharmacoData$study, function(x){
     })
 ```
 
-3. Histograms, appart from telling how is the data
+3. Histograms, apart from telling how is the data
 distributed, can also make evident potential
 problems with the data. Plot a histogram
 of drug viabilities. Does it look as one would
 expect from the description of the data?
 
 ```{r ask3}
+library(ggplot2)
+library(cowplot)
+ggplot( pharmacoData, aes( x=viability, group=study, fill=study) ) +
+    geom_histogram(binwidth=1, alpha=.5, position="identity") +
+    xlim(0, 170)
 
-hist()
-ggplot( pharmacoData, aes( viability, group=study, colour=study) ) +
-    geom_density(fill="white", lwd=2, alpha=0.1) + xlim(0, 170)
+# 
 ```
 
 4. How many viability data points are within the
@@ -66,6 +69,16 @@ expected range according to the definition of viability (e.g. above 0
 and below 100)? Try to come up with explanations about
 the values that are out of range. Are these due to technical
 issues? Biology?
+
+```{r ask4}
+library(ggplot2)
+library(cowplot)
+ggplot( pharmacoData, aes( x=viability, group=study, fill=study) ) +
+    geom_histogram(binwidth=1, alpha=.5, position="identity") +
+    xlim(0, 170)
+
+# 
+```
 
 5. Read the csv file containing the summarized data files. What kind
 of variables are in the data? What does each column represents?
